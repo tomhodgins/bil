@@ -1,0 +1,77 @@
+<!DOCTYPE bil>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script src=../interpreter/bil.js></script>
+<title>How to Make a S'more</title>
+
+<h1>How to Make a S'more</h1>
+<h2>in Basic Instruction Language</h2>
+
+<h3>Prose</h3>
+
+<p>How to make a s'more.</p>
+<p>For materials you'll need a fire, a skewer, and the following ingredients: a marshmallow, 2 graham crackers, and 2 chocolate wafers.</p>
+<p>Instructions: To make the bottom layer put 2 chocolate wafers on a graham cracker. Then put the skewer inside the middle of the marshmallow. Next put the skewer near the fire. Rotate the skewer slowly until the marshmallow's color is equal to golden brown. Then remove the skewer from the fire and put the skewer on the bottom layer. Finally put the graham cracker on top of the marshmallow and remove the skewer from the marshmallow.</p>
+
+<h3>Syntax</h3>
+
+<p>How to <verb>make</verb> a <noun>s'more</noun>.</p>
+<p>For <noun>materials</noun> you'll need a <noun>fire</noun>, a <noun>skewer</noun>, and the following <noun>ingredients</noun>: a <noun>marshmallow</noun>, <number>2</number> <noun>graham crackers</noun>, and <number>2</number> <noun>chocolate wafers</noun>.</p>
+<p><noun>Instructions</noun>: To <verb>make</verb> the <noun>bottom layer</noun> <verb>put</verb> <number>2</number> <noun>chocolate wafers</noun> <preposition>on</preposition> a <noun>graham cracker</noun>. Then <verb>put</verb> the <noun>skewer</noun> <preposition>inside</preposition> the <adjective>middle</adjective> of the <noun>marshmallow</noun>. Next <verb>put</verb> the <noun>skewer</noun> <preposition>near</preposition> the <noun>fire</noun>. <verb>Rotate</verb> the <noun>skewer</noun> <adverb>slowly</adverb> <preposition>until</preposition> the <noun>marshmallow's</noun> <adjective>color</adjective> is <verb>equal</verb> <preposition>to</preposition> <adjective>golden brown</adjective>. Then <verb>remove</verb> the <noun>skewer</noun> <preposition>from</preposition> the <noun>fire</noun> and <verb>put</verb> the <noun>skewer</noun> <preposition>on</preposition> the <noun>bottom layer</noun>. Finally <verb>put</verb> the <noun>graham cracker</noun> <preposition>on</preposition> top of the <noun>marshmallow</noun> and <verb>remove</verb> the <noun>skewer</noun> <preposition>from</preposition> the <noun>marshmallow</noun>.</p>
+
+<h3>BIL</h3>
+
+<block>
+  <noun>s'more</noun>
+  <context>
+    <block>
+      <verb>make</verb>
+      <context>
+        <block>
+          <noun>materials</noun>
+          <context>
+            <phrase><noun>fire</noun></phrase>
+            <phrase><noun>skewer</noun></phrase>
+            <block>
+              <noun>ingredients</noun>
+              <context>
+                <phrase><noun>marshmallow</noun></phrase>
+                <phrase><noun>graham cracker <number>2</number></noun></phrase>
+                <phrase><noun>chocolate wafer <number>2</number></noun></phrase>
+              </context>
+            </block>
+          </context>
+        </block>
+        <block>
+          <noun>instructions</noun>
+          <context>
+            <block>
+              <noun>bottom layer</noun>
+              <context>
+                <block>
+                  <verb>make</verb>
+                  <context>
+                    <phrase><verb>put <noun>chocolate wafer <number>2</number></noun> <preposition>on</preposition> <noun>graham cracker</noun></verb></phrase>
+                  </context>
+                </block>
+              </context>
+            </block>
+            <phrase><noun>bottom layer <verb>make</verb></noun></phrase>
+            <phrase><verb>put <noun>skewer</noun> <preposition>inside</preposition> <noun>marshmallow <adjective>middle</adjective></noun></verb></phrase>
+            <phrase><verb>put <noun>skewer</noun> <preposition>near</preposition> <noun>fire</noun></verb></phrase>
+            <block>
+              <preposition>until <verb>equal <noun>marshmallow <adjective>color</adjective></noun> <preposition>to</preposition> <adjective>golden brown</adjective></verb></preposition>
+              <context>
+              <phrase><verb>rotate <noun>skewer</noun> <adverb>slowly</adverb></verb></phrase>
+              </context>
+            </block>
+            <phrase><verb>remove <noun>skewer</noun> <preposition>from</preposition> <noun>fire</noun></verb></phrase>
+            <phrase><verb>put <noun>skewer</noun> <preposition>on</preposition> <noun>bottom layer</noun></verb></phrase>
+            <phrase><verb>put <noun>graham cracker</noun> <preposition>on</preposition> <noun>marshmallow</noun></verb></phrase>
+            <phrase><verb>remove <noun>skewer</noun> <preposition>from</preposition> <noun>marshmallow</noun></verb></phrase>
+          </context>
+        </block>
+      </context>
+    </block>
+  </context>
+</block>

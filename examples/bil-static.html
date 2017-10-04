@@ -1,0 +1,178 @@
+<!DOCTYPE bil>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script src=../interpreter/bil.js></script>
+<title>How to Make a Static HTML Website</title>
+
+<h1>How to Make a Static HTML Website</h1>
+<h2>in Basic Instruction Language</h2>
+
+<!--
+<h3>Prose</h3>
+
+<p>How to make a static HTML website.</p>
+
+<p>Instructions:</p>
+
+<p>First, register a domain name. To register a domain name, navigate with your browser to IWantMyName.com. Use the keyboard to write a domain name inside the search field. Use the website's search function to check if the domain name is available. If the domain name is available inside the search results purchase the domain name. If the domain name is not available inside the search results try to register a new domain name.</p>
+
+<p>Next let's set up hosting.</p>
+
+<p>In Amazon S3 Create new Bucket</p>
+<p>In Amazon S3 Set Bucket to host static content</p>
+<p>In Amazon S3 Set bucket policy to allow public read</p>
+<p>In Amazon S3 Create new bucket for www. domain name</p>
+<p>In Amazon S3 Set bucket to redirect to domain name</p>
+
+<p>In Amazon Route53 Create new Hosted Zone for domain name</p>
+<p>In Amazon Route53 Add new record A Record, Alias for Endpoint of Bucket</p>
+<p>In Amazon Route53 Add new record CNAME Record for www. domain name, Alias for domain name</p>
+<p>In Amazon Route53 Copy DNS records from hosted zone for Domain Name</p>
+
+<p>In IWantMyName.com set DNS for domain name to be equal to DNS records copied from Route53</p>
+
+<p>Next connect to the domain name with ftp software</p>
+
+ftp software create default site files
+
+default site files
+index.html
+style.css
+script.js
+.htaccess
+
+default HTML
+
+<pre>&lt;!DOCTYPE html>
+&lt;meta charset=utf-8>
+&lt;meta name=viewport content="width=device-width, initial-scale=1">
+&lt;title>&lt;/title>
+&lt;link href=style.css rel=stylesheet>
+&lt;script src=script.js>&lt;/script></pre>
+
+default CSS
+
+<pre>* {
+box-sizing: border-box;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+font-kerning: auto;
+}
+html {
+font-size: 10pt;
+line-height: 1.4;
+font-weight: 400;
+font-family: 'Source Sans Pro', sans-serif;
+-webkit-text-size-adjust: 100%;
+}
+body {
+margin: 0;
+}</pre>
+
+ftp software edit index.html to equal default HTML
+ftp software edit style.css to equal default CSS
+
+
+<p>To edit a file with code using ftp software first you need to download a file, then open the file with a code editor. With the code editor you can write code, and then save the file in the code editor. Finally upload the file.</p>
+
+<h3>BIL</h3>
+-->
+
+<block>
+  <noun>website <adjective>static</adjective> <adjective>HTML</adjective></noun>
+  <context>
+    <block>
+      <verb>make</verb>
+      <context>
+        <block>
+          <noun>ftp software</noun>
+          <context>
+            <block>
+              <verb>edit <noun>file</noun> <preposition>with</preposition> <noun>code</noun></verb>
+              <context>
+                <phrase><verb>download <noun>file</noun></verb></phrase>
+                <phrase><verb>open <noun>file</noun> <preposition>with</preposition> <noun>code editor</noun></verb></phrase>
+                <phrase><noun>web developer <verb>write <noun>code</noun></verb></noun></phrase>
+                <phrase><noun>code editor <verb>save <noun>file</noun></verb></noun></phrase>
+                <phrase><verb>upload <noun>file</noun></verb></phrase>
+              </context>
+            </block>
+          </context>
+        </block>
+        <block>
+          <noun>instructions</noun>
+          <context>
+            <block>
+              <verb>register <noun>domain name</noun></verb>
+              <context>
+                <phrase><noun>browser <verb>navigate <preposition>to</preposition> <noun>IWantMyName.com</noun></verb></noun></phrase>
+                <phrase><noun>keyboard <verb>write <noun>domain name</noun> <preposition>inside</preposition> <noun>search field</noun></verb></noun></phrase>
+                <phrase><noun>website <verb>search</verb></noun></phrase>
+                <block type=conjunction>
+                  <conjunction>if <noun>domain name</noun> <verb>is <adjective>available</adjective></verb> <preposition>inside</preposition> <noun>search results</noun></conjunction>
+                  <context>
+                    <phrase><verb>purchase <noun>domain name</noun></verb></phrase>
+                  </context>
+                </block>
+                <block type=conjunction>
+                  <conjunction>if <noun>domain name</noun> <verb>is <adjective>not</adjective> <adjective>available</adjective></verb>  <preposition>inside</preposition> <noun>search results</noun></conjunction>
+                  <context>
+                    <phrase><verb>register <adjective>new</adjective> <noun>domain name</noun></verb></phrase>
+                  </context>
+                </block>
+              </context>
+            </block>
+            <block>
+              <noun>default site files</noun>
+              <context>
+                <phrase><noun>index.html</noun></phrase>
+                <phrase><noun>style.css</noun></phrase>
+                <phrase><noun>script.js</noun></phrase>
+                <phrase><noun>.htaccess</noun></phrase>
+              </context>
+            </block>
+            <block>
+              <noun>default HTML</noun>
+              <context>
+                <pre>&lt;!DOCTYPE html>
+&lt;meta charset=utf-8>
+&lt;meta name=viewport content="width=device-width, initial-scale=1">
+&lt;title>&lt;/title>
+&lt;link href=style.css rel=stylesheet>
+&lt;script src=script.js>&lt;/script></pre>
+              </context>
+            </block>
+            <block>
+              <noun>default CSS</noun>
+              <context>
+                <pre>* {
+box-sizing: border-box;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+font-kerning: auto;
+}
+html {
+font-size: 10pt;
+line-height: 1.4;
+font-weight: 400;
+font-family: 'Source Sans Pro', sans-serif;
+-webkit-text-size-adjust: 100%;
+}
+body {
+margin: 0;
+}</pre>
+              </context>
+            </block>
+            <phrase><verb>register <noun>domain name</noun></verb></phrase>
+            <phrase><noun>ftp software <verb>connect <preposition>to</preposition> <noun>domain name</noun></verb></noun></phrase>
+            <phrase><noun>ftp software <verb>create <noun>default site files</noun></verb></noun></phrase>
+            <phrase><noun>ftp software <verb>edit <noun>index.html</noun> <preposition>to</preposition> <verb>equal <noun>default HTML</noun></verb></verb></noun></phrase>
+            <phrase><noun>ftp software <verb>edit <noun>style.css</noun> <preposition>to</preposition> <verb>equal <noun>default CSS</noun></verb></verb></noun></phrase>
+          </context>
+        </block>
+      </context>
+    </block>
+  </context>
+</block>

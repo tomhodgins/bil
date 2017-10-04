@@ -1,0 +1,54 @@
+<!DOCTYPE bil>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script src=../interpreter/bil.js></script>
+<title>How to decide which browser versions to support</title>
+
+<h1>How to decide which browser versions to support</h1>
+<h2>in Basic Instruction Language</h2>
+
+<h3>Prose</h3>
+
+<p>For each browser version, the revenue per user is the total revenue divided by the total users.</p>
+<p>The potential profit is the revenue per user multiplied by the users of this browser version.</p>
+<p>The labour cost is the hourly rate multiplied by the estimated hours to support this browser version.</p>
+<p>If the potential profit is greater than the labour cost, support this browser version.</p>
+
+<h3>Syntax</h3>
+
+<p><preposition>For</preposition> <pronoun>each</pronoun> <noun>browser</noun> <number>version</number>, the <number>revenue per user</number> is the <number>total revenue</number> <verb>divided</verb> <preposition>by</preposition> the <number>total users</number>.</p>
+<p>The <number>potential profit</number> is the <number>revenue per user</number> <verb>multiplied</verb> <preposition>by</preposition> the <number>users</number> of <pronoun>this</pronoun> <noun>browser</noun> <number>version</number>.</p>
+<p>The <number>labour cost</number> is the <number>hourly rate</number> <verb>multiplied</verb> <preposition>by</preposition> the <verb>estimated</verb> <number>hours</number> <preposition>to</preposition> <verb>support</verb> <pronoun>this</pronoun> <noun>browser</noun> <number>version</number>.</p>
+<p><conjunction>If</conjunction> the <number>potential profit</number> is <verb>greater</verb> <preposition>than</preposition> the <number>labour cost</number>, <verb>support</verb> <pronoun>this</pronoun> <noun>browser</noun> <number>version</number>.</p>
+
+<h3>BIL</h3>
+
+<block>
+  <preposition>for <pronoun>each <noun>browser <number>version</number></noun></pronoun></preposition>
+  <context>
+    <block>
+      <number>revenue per user</number>
+      <context>
+        <phrase><verb>divide <number>total revenue</number> <preposition>by</preposition> <number>total users</number></verb></phrase>
+      </context>
+    </block>
+    <block>
+      <number>potential profit</number>
+      <context>
+        <phrase><verb>multiply <number>revenue per user</number> <preposition>by</preposition> <pronoun>this <noun>browser <number>version <number>users</number></number></noun></pronoun></verb></phrase>
+      </context>
+    </block>
+    <block>
+      <number>labour cost</number>
+      <context>
+        <phrase><verb>multiply <number>hourly rate</number> <preposition>by</preposition> <verb>estimate <number>hours</number> <preposition>to</preposition> <verb>support <pronoun>this <noun>browser <number>version</number></noun></pronoun></verb></verb></verb></phrase>
+      </context>
+    </block>
+    <block>
+      <conjunction>if <verb>greater <number>potential profit</number> <preposition>than</preposition> <number>labour cost</number></verb></conjunction>
+      <context>
+        <phrase><verb>support <pronoun>this <noun>browser <number>version</number></noun></pronoun></verb></phrase>
+      </context>
+    </block>
+  </context>
+</block>

@@ -1,0 +1,32 @@
+<!DOCTYPE bil>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script src=../interpreter/bil.js></script>
+<title>How to Extract Audio from Youtube Videos</title>
+
+<h1>How to Extract Audio from Youtube Videos</h1>
+
+<block>
+  <verb>extract <noun>data <adjective>audio</adjective></noun> <preposition>from</preposition> <noun>video <adjective>youtube</adjective></noun></verb>
+  <context>
+    <block>
+      <noun>instructions</noun>
+      <context>
+        <phrase><noun>web browser <verb>navigate <preposition>to</preposition> <noun>youtube.com <noun>video</noun></noun></noun></phrase>
+        <phrase><noun>web browser <verb>copy <noun>page <noun>url</noun></noun></verb></noun></phrase>
+        <phrase><noun proper>VLC media player <adverb>as <noun>network source</noun> <verb>open <noun>page <noun>url</noun></noun></verb></noun></adverb></phrase>
+        <phrase><noun proper>VLC media player <verb>view <noun proper>Media Information</noun></verb></noun></phrase>
+        <phrase><noun proper>VLC media player <noun proper>Media Information <verb>copy <noun proper>Location</noun></verb></noun></noun></phrase>
+        <phrase><noun>web browser <verb>navigate <preposition>to</preposition> <noun proper>Location</noun></verb></noun></phrase>
+        <phrase><noun>web browser <verb>save <noun>video <adjective>youtube</adjective></noun></verb></noun></phrase>
+        <phrase><noun proper>ffmpeg <verb>convert <noun>video <adjective>youtube</adjective></noun></verb>with <noun>command</noun></noun></phrase>
+        <block>
+          <noun>command</noun>
+          <context>
+            <pre>ffmpeg -i <noun>video <adjective>youtube</adjective></noun>.mp4 -vn -acodec copy <noun>data <adjective>audio</adjective></noun>.m4a</pre>
+          </context>
+        </block>
+      </context>
+    </block>
+  </context>
+</block>

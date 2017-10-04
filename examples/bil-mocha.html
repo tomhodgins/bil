@@ -1,0 +1,49 @@
+<!DOCTYPE bil>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script src=../interpreter/bil.js></script>
+<title>How to make a Vegan Iced Mocha</title>
+
+<h1>How to make a Vegan Iced Mocha</h1>
+<h2>in Basic Instruction Language</h2>
+
+<h3>Prose</h3>
+
+<p>How to make a vegan iced mocha.</p>
+<p>For materials you will need a cup, a spoon, 250 ml of chocolate almond milk, and 250 ml of iced coffee.</p>
+<p>The instructions are to put the milk and coffee inside the cup and mix with the spoon for 15 seconds.</p>
+
+<h3>Syntax</h3>
+
+<p>How to <verb>make</verb> a <adjective>vegan</adjective> <adjective>iced</adjective> <noun>mocha</noun>.</p>
+<p>For <noun>materials</noun> you will need a <noun>cup</noun>, a <noun>spoon</noun>, <number>250 ml</number> of <adjective>chocolate</adjective> <adjective>almond</adjective> <noun>milk</noun>, and <number>250 ml</number> of <adjective>iced</adjective> <noun>coffee</noun>.</p>
+<p>The <noun>instructions</noun> are to <verb>put</verb> the <noun>milk</noun> <conjunction>and</conjunction> <noun>coffee</noun> <preposition>inside</preposition> the <noun>cup</noun> and <verb>mix</verb> <preposition>with</preposition> the <noun>spoon</noun> for <number>15 seconds</number>.</p>
+
+<h3>BIL</h3>
+
+<block>
+  <noun>mocha <adjective>vegan</adjective> <adjective>iced</adjective></noun>
+  <context>
+    <block>
+      <verb>make</verb>
+      <context>
+        <block>
+          <noun>materials</noun>
+          <context>
+            <phrase><noun>cup</noun></phrase>
+            <phrase><noun>spoon</noun></phrase>
+            <phrase><noun>milk <adjective>almond</adjective> <adjective>chocolate</adjective> <number>250 ml</number></noun></phrase>
+            <phrase><noun>coffee <adjective>iced</adjective> <number>250 ml</number></noun></phrase>
+          </context>
+        </block>
+        <block>
+          <noun>instructions</noun>
+          <context>
+            <phrase><verb>put <noun>milk</noun> <conjunction>and</conjunction> <noun>coffee</noun> <preposition>inside</preposition> <noun>cup</noun></verb></phrase>
+            <phrase><verb>mix <preposition>with</preposition> <noun>spoon</noun> <number>15 seconds</number></verb></phrase>
+          </context>
+        </block>
+      </context>
+    </block>
+  </context>
+</block>

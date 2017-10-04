@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Crimson+Text" rel=stylesheet>
+<title>BIL ➸ Basic Instruction Language</title>
+
+<style>
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+  }
+  html {
+    font-size: 10pt;
+    line-height: 1.75;
+    font-weight: 500;
+  }
+  body {
+    padding: 1em;
+    font-size: 150%;
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: 'Crimson Text', serif;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+  blockquote {
+    padding: 1em 1em 1em calc(1em + 3px);
+    color: rgba(0,0,0,.7);
+    margin: 1em 0;
+    line-height: 1.4;
+    background: #fef;
+    color: #e2e;
+    border-left: 3px solid #e2e;
+  }
+  blockquote:not(pre) code {
+    background: #fcf;
+  }
+  .quote {
+    font-size: 125%;
+    color: black;
+    font-style: italic;
+    background: rgba(0,0,0,.1);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0 .5em 0;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -.02em;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  h2 {
+    margin-bottom: .75em;
+    line-height: 1;
+    border-bottom: 1px solid #eee;
+  }
+  h4 {
+    font-weight: bolder;
+  }
+  [class*=float-] {
+    margin: 2em auto;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    clear: both;
+  }
+  p,
+  ul,
+  ol {
+    margin: 0;
+  }
+  ul,
+  ol {
+    font-size: 100%;
+    padding-left: .5em;
+  }
+  * + p,
+  * + ul,
+  * + ol {
+    margin-top: .75em;
+  }
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    padding-left: .5em;
+  }
+  ul li {
+    list-style: none;
+    position: relative;
+  }
+  ul li:before {
+    content: '• ';
+    position: absolute;
+    left: -1em;
+  }
+  ul ul li:before,
+  ul ol li:before,
+  ol ul li:before,
+  ol ol li:before {
+    content: '• ';
+    position: absolute;
+    left: -1.5em;
+  }
+
+  li {
+    margin: 1em;
+  }
+  hr {
+    margin: 5em 0;
+  }
+  code,
+  pre {
+    font-family: 'Source Code Pro', Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  }
+  *:not(pre) > code {
+    padding: 0 .5em;
+    background: #fef;
+    font-size: 80%;
+  }
+  code {
+    display: inline-block;
+    word-break: break-word;
+  }
+  .sourceCode {
+    margin: 1em 0;
+  }
+  pre {
+    font-size: 80%;
+    border: .25em solid #eee;
+    padding: 1em 2em;
+    word-break: break-all;
+    word-wrap:break-word;
+    overflow-x: auto;
+  }
+  nav {
+    width: 100%;
+    margin: 1em 0;
+    text-align: center;
+  }
+  nav a {
+    display: block;
+    padding: 1em;
+  }
+  footer {
+    opacity: .4;
+    padding: 2em 0;
+    text-align: center;
+    transition: opacity .2s ease-in-out;
+  }
+  footer:hover {
+    opacity: 1;
+  }
+  dt {
+    margin-top: 2em;
+    font-weight: bold;
+  }
+  dd {
+    margin-top: 1em;
+  }
+  .cover {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    position: relative;
+  }
+  @media (min-width: 600px) {
+    body {
+      padding: 3em 2em 5em 2em;
+    }
+    h1 { font-size: 300%; }
+    h2 { font-size: 200%; }
+    h3 { font-size: 160%; }
+    h4 { font-size: 135%; }
+    h5 { font-size: 120%; }
+    h6 { font-size: 110%; }
+    blockquote {
+      margin: 2em 1em;
+    }
+    ul,
+    ol {
+      padding-left: 1.5em;
+    }
+    [class*=float-] {
+      max-width: 50%;
+    }
+    .float-left {
+      float: left;
+      margin: 0 1em .5em 0;
+    }
+    .float-right {
+      float: right;
+      margin: 0 0 .5em 1em;
+    }
+    nav a {
+      display: inline-block;
+    }
+  }
+</style>
+<style>
+  div.sourceCode { overflow-x: auto; }
+  table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+    margin: 0; padding: 0; vertical-align: baseline; border: none; }
+  table.sourceCode { width: 100%; line-height: 100%; }
+  td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+  td.sourceCode { padding-left: 5px; }
+  code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+  code > span.dt { color: #902000; } /* DataType */
+  code > span.dv { color: #40a070; } /* DecVal */
+  code > span.bn { color: #40a070; } /* BaseN */
+  code > span.fl { color: #40a070; } /* Float */
+  code > span.ch { color: #4070a0; } /* Char */
+  code > span.st { color: #4070a0; } /* String */
+  code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+  code > span.ot { color: #007020; } /* Other */
+  code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+  code > span.fu { color: #06287e; } /* Function */
+  code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+  code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  code > span.cn { color: #880000; } /* Constant */
+  code > span.sc { color: #4070a0; } /* SpecialChar */
+  code > span.vs { color: #4070a0; } /* VerbatimString */
+  code > span.ss { color: #bb6688; } /* SpecialString */
+  code > span.im { } /* Import */
+  code > span.va { color: #19177c; } /* Variable */
+  code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+  code > span.op { color: #666666; } /* Operator */
+  code > span.bu { } /* BuiltIn */
+  code > span.ex { } /* Extension */
+  code > span.pp { color: #bc7a00; } /* Preprocessor */
+  code > span.at { color: #7d9029; } /* Attribute */
+  code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+  code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+  code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+  code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<h1 id="bil-basic-instruction-language">Basic Instruction Language</h1>
+<h2 id="what-is-bil">What is BIL?</h2>
+<p>BIL is a superset of <a href="https://w3c.github.io/html">HTML</a> that adds twelve new tags and uses doctype of <code>&lt;!DOCTYPE bil&gt;</code>.</p>
+<h2 id="why-use-bil">Why use BIL?</h2>
+<p>BIL attempts to bridge the gap between natural languages like english, and more structured forms of language like <a href="https://en.wikipedia.org/wiki/Programming_language">computer programming languages</a>, <a href="https://en.wikipedia.org/wiki/Legal_English">legalese</a>, and <a href="https://en.wikipedia.org/wiki/Form_%28document%29">forms</a>.</p>
+<p>The challenge is to reduce ambiguity in written instructions by introducing additional markup and information about the parts of speech used, and to adhere to a consistent contextual structure for illustrating the relationships between the words.</p>
+<p>The goal is to arrive at an instruction language that acts both as a superset of HTML as well as a simplified subset of the natural language you are marking up as BIL. The aim is to present information in a way that a reader of the same natural language who has never seen BIL can understand it with a minimal learning curve to replace confusing instructions, verbose language, and ambiguous phrasing.</p>
+<h2 id="bil-reference">BIL Reference</h2>
+<h3 id="words">Words</h3>
+<ul>
+<li>child of: any word tag, <code>&lt;block&gt;</code>, or <code>&lt;phrase&gt;</code></li>
+<li>parent of: any word tag, or <code>&lt;block&gt;</code></li>
+</ul>
+<p>Words are the elementary building blocks of BIL. You may nest word tags inside of each other infinitely deep (this is called putting words 'in the context of' another word) and this context-based nesting is the core idea of BIL.</p>
+<h4 id="noun">Noun</h4>
+<ul>
+<li>attribute(s): <code>proper</code></li>
+</ul>
+<p>A <code>&lt;noun&gt;</code> tag wraps any noun or proper noun. Nouns are analogous to <em>generic objects</em> in programming language.</p>
+<p>The <code>proper</code> attribute can be added to signify a proper noun. This is analogous to a <em>named variable</em> in a programming language.</p>
+<h4 id="verb">Verb</h4>
+<p>A <code>&lt;verb&gt;</code> tag wraps any verb, action, or set of actions. Verbs are analogous to <em>functions</em> in a programming language.</p>
+<h4 id="number">Number</h4>
+<p>A <code>&lt;number&gt;</code> tag wraps any numeric value.</p>
+<h4 id="adjective">Adjective</h4>
+<p>An <code>&lt;adjective&gt;</code> tag wraps any adjective. These are analogous to <em>properties</em> or <em>attributes</em> in a programming language.</p>
+<h4 id="pronoun">Pronoun</h4>
+<p>A <code>&lt;pronoun&gt;</code> tag wraps any pronoun. These address specific instances of nouns based on context.</p>
+<h4 id="preposition">Preposition</h4>
+<p>A <code>&lt;preposition&gt;</code> tag wraps any preposition. These usually refer to the directionality, location, orientation, or state in which a verb or noun exists.</p>
+<h4 id="adverb">Adverb</h4>
+<p>An <code>&lt;adverb&gt;</code> tag wraps any adverb. When used to modify verbs adverbs are analogous to <em>function arguments</em> in programming languages.</p>
+<h4 id="conjunction">Conjunction</h4>
+<p>A <code>&lt;conjunction&gt;</code> tag wraps any conjunction. Conjunctions are analogous to a lot of logical keywords like <code>if</code> and <code>while</code>.</p>
+<h4 id="interjection">Interjection</h4>
+<p>An <code>&lt;interjection&gt;</code> tag wraps any interjection.</p>
+<h3 id="grouping-operators">Grouping Operators</h3>
+<h4 id="block">Block</h4>
+<ul>
+<li>child of: <code>&lt;context&gt;</code></li>
+<li>parent of: any word tags, and <code>&lt;context&gt;</code></li>
+</ul>
+<p>A <code>&lt;block&gt;</code> tag is a grouping operator containing one or more words and a <code>&lt;context&gt;</code> tag</p>
+<h4 id="context">Context</h4>
+<ul>
+<li>child of: <code>&lt;block&gt;</code></li>
+<li>parent of: any word tags, and <code>&lt;phrase&gt;</code></li>
+</ul>
+<p>A <code>&lt;context&gt;</code> tag is a grouping operator containing <code>&lt;phrase&gt;</code> tags and and/or <code>&lt;block&gt;</code> tags.</p>
+<h4 id="phrase">Phrase</h4>
+<p>A <code>&lt;phrase&gt;</code> tag is a grouping operator containing multiple word tags.</p>
+<h2 id="how-to-write-bil">How to write BIL</h2>
+<p>Always begin a BIL document with a containing <code>&lt;block&gt;</code> tag:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;block&gt;&lt;/block&gt;</span></code></pre></div>
+<p>This containing block may contain one or more word tags, plus a <code>&lt;context&gt;</code> tag. This block is a <code>&lt;noun&gt;</code> block and will contain more words that define something in the context of a <code>&lt;noun&gt;</code> called 'BIL example':</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;block&gt;</span>
+  <span class="kw">&lt;noun&gt;</span>BIL example<span class="kw">&lt;/noun&gt;</span>
+  <span class="kw">&lt;context&gt;&lt;/context&gt;</span>
+<span class="kw">&lt;/block&gt;</span></code></pre></div>
+<p>This <code>&lt;context&gt;</code> tag may contain one or more word tags, more <code>&lt;block&gt;</code> tags, or if there are multiple separate groupings of word tags each of these gropuings can be wrapped in <code>&lt;phrase&gt;</code> tags:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;block&gt;</span>
+  <span class="kw">&lt;noun&gt;</span>BIL example<span class="kw">&lt;/noun&gt;</span>
+  <span class="kw">&lt;context&gt;</span>
+    <span class="kw">&lt;phrase&gt;&lt;verb&gt;</span>demo <span class="kw">&lt;noun&gt;</span>item 1<span class="kw">&lt;/noun&gt;&lt;/verb&gt;&lt;/phrase&gt;</span>
+    <span class="kw">&lt;phrase&gt;&lt;verb&gt;</span>demo <span class="kw">&lt;noun&gt;</span>item 2<span class="kw">&lt;/noun&gt;&lt;/verb&gt;&lt;/phrase&gt;</span>
+  <span class="kw">&lt;/context&gt;</span>
+<span class="kw">&lt;/block&gt;</span></code></pre></div>
+<p>Here we could say that the <code>&lt;noun&gt;</code> 'item 1' is in the context of the <code>&lt;verb&gt;</code> 'demo', to demonstrate. We could also say that doing something with 'item 1' and 'item 2' are in the context of a <code>&lt;noun&gt;</code> called 'BIL example'.</p>
+<h2 id="bil-demos">BIL Demos</h2>
+<ul>
+<li><a href="examples/bil-browser.html">How to decide which browser versions to support</a></li>
+<li><a href="examples/bil-mocha.html">How to make a Vegan Iced Mocha</a></li>
+<li><a href="examples/bil-smore.html">How to Make a S'more</a></li>
+<li><a href="examples/bil-static.html">How to Make a Static HTML Website</a></li>
+<li><a href="examples/bil-youtube.html">How to Extract Audio from Youtube Videos</a></li>
+</ul>
+
+<footer>
+  <p>Made with &hearts; by <a href=http://twitter.com/innovati>@innovati</a></p>
+</footer>
