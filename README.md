@@ -1,9 +1,12 @@
 # BIL ➸ Basic Instruction Language
 
+![](https://i.imgur.com/60fVmA4.gif)
+
 ## What is BIL?
 
 BIL is a superset of [HTML](https://w3c.github.io/html) that adds twelve new tags and uses doctype of `<!DOCTYPE bil>`.
 
+![](https://i.imgur.com/kIR6KV7.gif)
 
 ## Why use BIL?
 
@@ -13,6 +16,7 @@ The challenge is to reduce ambiguity in written instructions by introducing addi
 
 The goal is to arrive at an instruction language that acts both as a superset of HTML as well as a simplified subset of the natural language you are marking up as BIL. The aim is to present information in a way that a reader of the same natural language who has never seen BIL can understand it with a minimal learning curve to replace confusing instructions, verbose language, and ambiguous phrasing.
 
+![](https://i.imgur.com/GURJZef.gif)
 
 ## BIL Reference
 
@@ -123,6 +127,5 @@ Here we could say that the `<noun>` 'item 1' is in the context of the `<verb>` '
 - [How to Make a S'more](examples/bil-smore.html)
 - [How to Make a Static HTML Website](examples/bil-static.html)
 - [How to Extract Audio from Youtube Videos](examples/bil-youtube.html)
-
 
 > Made with &hearts; by [@innovati](https://twitter.com/innovati)
